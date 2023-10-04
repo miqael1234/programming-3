@@ -9,6 +9,9 @@ for (let i = 0; i < n; i++) {
     }
 }
 
+console.log(111);
+
+
 function characters(index, count) {
     for (let i = 0; i < count; i++) {
         var v = Math.floor(random(0,n))
