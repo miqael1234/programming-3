@@ -1,5 +1,5 @@
 class Predator extends LivingCreature {
-    constructor(x, y, index){
+    constructor(x, y, index) {
         super(x, y, index);
     }
 
