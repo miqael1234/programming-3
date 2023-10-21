@@ -1,0 +1,40 @@
+#tumo{
+    display: block;
+    background: red;
+    width: 100px;
+    height: 30px;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+
+#clean{
+    display: block;
+    background: blue;
+    width: 100px;
+    height: 30px;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+
+
+#garun{
+    display: block;
+    background: yellow;
+    width: 100px;
+    height: 30px;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+
+#amar{
+    display: block;
+    background: yellow;
+    width: 100px;
+    height: 30px;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
