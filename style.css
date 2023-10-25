@@ -31,7 +31,27 @@
 
 #amar{
     display: block;
-    background: yellow;
+    background: black;
+    width: 100px;
+    height: 30px;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+
+#ashun{
+    display: block;
+    background: pink;
+    width: 100px;
+    height: 30px;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+
+#dzmer{
+    display: block;
+    background: green;
     width: 100px;
     height: 30px;
     color:white;

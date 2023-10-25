@@ -6,7 +6,7 @@ app.use(express.static("../programming-3"));
 app.get("/", function (req, res) {
     res.redirect("index.html");
 });
-server.listen(3000, function () {
+server.listen(3001, function () {
     console.log("App is running on port 3000");
 });
 
