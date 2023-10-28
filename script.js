@@ -38,7 +38,7 @@ function drawGame(matrix) {
             } else if(matrix[y][x] == 1 && werAnshun == true){
                 fill("white");
             } else if(matrix[y][x] == 1 && framAnshun == true){
-                fill("brown");
+                fill("indigo");
            
             }
             else if (matrix[y][x] == 0) {
@@ -82,8 +82,8 @@ function clickHandlerClean(evt){
     flag = false;
     flagAnshun = false;
     werAnshun = false;
-    menAnshun =false;
-    framAnshun = false;
+    menAnshun = false;
+    framAnshun = false
 }
 
 var ashunbtn = document.getElementById("ashun");
@@ -109,8 +109,27 @@ function amar(evt){
 }
 
 var garunmbtn = document.getElementById("garun");
-amarmbtn.addEventListener("click", garun, false);
+garunmbtn.addEventListener("click", garun, false);
 
-function amar(evt){
+function garun(evt){
      framAnshun = true;
+}
+const pauseBtn = document.getElementById("pause")
+const resumeBtn = document.getElementById("resum")
+
+pauseBtn.addEventListener("click", handlePauseGame)
+resumeBtn.addEventListener("click", handleResumGame)
+
+let ifPaused=false;
+
+function handlePauseGame(){
+    ifPaused=true
+    socket.emit("pause game",  ifPaused)
+}
+
+let ifResum=true;
+
+function handleResumGame(){
+    ifResum=false;
+    socket.emit("resum game",  ifResum)
 }

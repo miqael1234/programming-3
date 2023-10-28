@@ -6,7 +6,7 @@ app.use(express.static("../programming-3"));
 app.get("/", function (req, res) {
     res.redirect("index.html");
 });
-server.listen(3001, function () {
+server.listen(3000, function () {
     console.log("App is running on port 3000");
 });
 
@@ -20,7 +20,7 @@ matrix = [];
 grassArr = [];
 grassEaterArr = [];
 predatorArr = [];
-
+Paused = false;
 
 
 
@@ -65,18 +65,21 @@ function createGame() {
 }
 
 function drawGame() {
-    for (var i in grassArr) {
-        grassArr[i].mul();
+    if(!Paused){
+        for (var i in grassArr) {
+            grassArr[i].mul();
+        }
+    
+        for (var i in grassEaterArr) {
+            grassEaterArr[i].eat();
+        }
+    
+        for (var i in predatorArr) {
+            predatorArr[i].eat();
+        }
+        io.emit('matrix', matrix)
     }
-
-    for (var i in grassEaterArr) {
-        grassEaterArr[i].eat();
-    }
-
-    for (var i in predatorArr) {
-        predatorArr[i].eat();
-    }
-    io.emit('matrix', matrix)
+    
 }
 
 createGame()
@@ -90,5 +93,15 @@ function startGame() {
 
 io.on("connection", function (socket) {
     socket.emit("matrix", matrix)
+    socket.on("pause game", handlePause)
+    socket.on("resum game", handleResumegame)
     startGame()
 });
+
+function handlePause(ifPaused) {
+   Paused = ifPaused
+}
+
+function handleResumegame(ifResum) {
+    Paused = ifResum
+ }

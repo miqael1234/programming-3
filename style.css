@@ -58,3 +58,24 @@
     border: none;
     cursor: pointer;
 }
+
+
+#pause{
+    display: block;
+    background: indigo;
+    width: 100px;
+    height: 30px;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+
+#resum{
+    display: block;
+    background: aquamarine;
+    width: 100px;
+    height: 30px;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
